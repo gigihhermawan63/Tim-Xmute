@@ -1,4 +1,4 @@
-Fitur: menambahkan komponen sidebar dan navbar untuk navigasi berpindah halaman atau sign-out
+Fitur: menambahkan komponen sidebar dan navbar pada halaman admin-dashboard untuk navigasi berpindah halaman atau sign-out
 
 Fitur: menambahkan tampilan halaman web admin-dashboard untuk menampilkan seluruh data laptop yang tersedia
 
