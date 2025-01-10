@@ -192,3 +192,39 @@ export async function PUT(req) {
     await client.close();
   }
 }
+
+export async function DELETE(req) {
+  try {
+    await client.connect();
+    const database = client.db("e_katalog_penyediaan_laptop");
+    const collection = database.collection("laptop");
+
+    const formData = await req.formData();
+    const _id = formData.get("_id");
+
+    const findDataById = await collection
+      .find({ _id: new ObjectId(`${_id}`) })
+      .toArray();
+
+    await del(findDataById[0].img_file.url);
+
+    await collection.deleteOne({ _id: new ObjectId(`${_id}`) });
+
+    return new Response(
+      JSON.stringify({
+        messageResponse: "Data berhasil dihapus di Database",
+      }),
+      {
+        status: 200,
+        statusText: "OK",
+      }
+    );
+  } catch (error) {
+    return new Response(error, {
+      status: 500,
+      statusText: "Internal Server Error",
+    });
+  } finally {
+    await client.close();
+  }
+}
