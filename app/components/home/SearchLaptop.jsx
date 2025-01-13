@@ -25,6 +25,7 @@ const SearchLaptop = ({ router, category, setCategory, search, setSearch }) => {
             <option value="ram">RAM</option>
             <option value="processor">Processor</option>
             <option value="vga">VGA</option>
+            <option value="harga">Harga</option>
           </select>
 
           <input
