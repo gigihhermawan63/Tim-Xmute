@@ -37,6 +37,12 @@ export async function GET(req) {
         .sort({ createdAt: -1 })
         .toArray();
     }
+    if (category === "processor") {
+      result = await collection
+        .find({ processor: new RegExp(search, "i") })
+        .sort({ createdAt: -1 })
+        .toArray();
+    }
 
     return new Response(
       JSON.stringify({

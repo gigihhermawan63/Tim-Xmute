@@ -23,6 +23,7 @@ const SearchLaptop = ({ router, category, setCategory, search, setSearch }) => {
             <option value="nama">Nama</option>
             <option value="kapasitas_penyimpanan">Kapasitas Penyimpanan</option>
             <option value="ram">RAM</option>
+            <option value="processor">Processor</option>
           </select>
 
           <input
