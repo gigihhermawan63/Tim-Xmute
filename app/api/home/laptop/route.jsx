@@ -31,6 +31,12 @@ export async function GET(req) {
         .sort({ createdAt: -1 })
         .toArray();
     }
+    if (category === "ram") {
+      result = await collection
+        .find({ ram: new RegExp(search, "i") })
+        .sort({ createdAt: -1 })
+        .toArray();
+    }
 
     return new Response(
       JSON.stringify({
