@@ -25,6 +25,12 @@ export async function GET(req) {
         .sort({ createdAt: -1 })
         .toArray();
     }
+    if (category === "kapasitas_penyimpanan") {
+      result = await collection
+        .find({ kapasitas_penyimpanan: new RegExp(search, "i") })
+        .sort({ createdAt: -1 })
+        .toArray();
+    }
 
     return new Response(
       JSON.stringify({
