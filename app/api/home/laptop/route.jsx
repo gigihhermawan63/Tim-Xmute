@@ -9,14 +9,13 @@ export async function GET(req) {
     const database = client.db("e_katalog_penyediaan_laptop");
     const collection = database.collection("laptop");
 
+    const category = req?.nextUrl?.searchParams.get("category");
     const search = req?.nextUrl?.searchParams.get("search");
 
     let result;
-    if (!search) {
-      result = await collection.find().sort({ createdAt: -1 }).toArray();
-    } else {
+    if (category === "merk") {
       result = await collection
-        .find({ nama: new RegExp(search, "i") })
+        .find({ merk: new RegExp(search, "i") })
         .sort({ createdAt: -1 })
         .toArray();
     }

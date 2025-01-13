@@ -13,13 +13,16 @@ const MainContent = () => {
   const searchParams = useSearchParams();
 
   const router = useRouter();
-  const [value, setValue] = useState("");
+  const [category, setCategory] = useState("nama");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     try {
       async function fetchData() {
         const response = await fetch(
-          `/api/home/laptop?search=${searchParams.get("search") || ""}`,
+          `/api/home/laptop?category=${
+            searchParams.get("category") || category
+          }&search=${searchParams.get("search") || ""}`,
           { method: "GET" }
         );
 
@@ -35,7 +38,13 @@ const MainContent = () => {
 
   return (
     <section className="text-lg">
-      <SearchLaptop router={router} value={value} setValue={setValue} />
+      <SearchLaptop
+        router={router}
+        category={category}
+        setCategory={setCategory}
+        search={search}
+        setSearch={setSearch}
+      />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-10 p-10">
         {data.map((data, index) => (

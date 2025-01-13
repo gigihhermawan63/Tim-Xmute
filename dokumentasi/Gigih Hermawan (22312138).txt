@@ -13,3 +13,17 @@ Fitur: menambahkan api endpoint untuk method POST pada halaman admin-dashboard (
 Fitur: menambahkan api endpoint untuk method PUT pada halaman admin-dashboard ("/api/admin-dashboard/laptop")
 
 Fitur: menambahkan api endpoint untuk method DELETE pada halaman admin-dashboard ("/api/admin-dashboard/laptop")
+
+Fitur: menambahkan fitur pencarian berdasarkan Kategori Merk
+
+Fitur: menambahkan fitur pencarian berdasarkan Kategori Nama
+
+Fitur: menambahkan fitur pencarian berdasarkan Kategori Kapasitas Penyimpanan
+
+Fitur: menambahkan fitur pencarian berdasarkan Kategori RAM
+
+Fitur: menambahkan fitur pencarian berdasarkan Kategori Processor
+
+Fitur: menambahkan fitur pencarian berdasarkan Kategori VGA
+
+Fitur: menambahkan fitur pencarian berdasarkan Kategori Harga
